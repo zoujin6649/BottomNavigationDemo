@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.business.bottomnavigationdemo.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_AFragment"
+            app:destination="@id/AFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_BFragment"
+            app:destination="@id/BFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.business.bottomnavigationdemo.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.business.bottomnavigationdemo.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.business.bottomnavigationdemo.ui.home.AFragment"
+        android:label="AFragment"
+        tools:layout="@layout/a_fragment">
+        <action
+            android:id="@+id/action_AFragment_to_CFragment"
+            app:destination="@id/CFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.business.bottomnavigationdemo.ui.home.BFragment"
+        android:label="BFragment"
+        tools:layout="@layout/b_fragment">
+        <action
+            android:id="@+id/action_BFragment_to_DFragment"
+            app:destination="@id/DFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.business.bottomnavigationdemo.ui.home.CFragment"
+        android:label="CFragment"
+        tools:layout="@layout/c_fragment" >
+        <action
+            android:id="@+id/action_CFragment_to_navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/DFragment"
+        android:name="com.business.bottomnavigationdemo.ui.home.DFragment"
+        android:label="DFragment"
+        tools:layout="@layout/d_fragment">
+        <action
+            android:id="@+id/action_DFragment_to_EFragment"
+            app:destination="@id/EFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EFragment"
+        android:name="com.business.bottomnavigationdemo.ui.home.EFragment"
+        android:label="EFragment"
+        tools:layout="@layout/e_fragment" >
+        <action
+            android:id="@+id/action_EFragment_to_BFragment"
+            app:popUpTo="@id/BFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/BFragment" />
+    </fragment>
+
+</navigation>
